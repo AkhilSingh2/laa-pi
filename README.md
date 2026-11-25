@@ -4,6 +4,15 @@
 
 laa-pi finds jobs, scores how well you fit each one, writes a tailored one-page resume, and helps you apply, all from your own machine. You stay in the loop: it never stores portal passwords, never gets past an OTP or CAPTCHA on its own, and never sends outreach for you.
 
+<p align="center">
+  <img src="docs/screenshots/home.webp" alt="laa-pi Home: profile card, live status, needs-your-action list, quotas and pipeline" width="100%">
+</p>
+<table><tr>
+<td width="50%"><img src="docs/screenshots/jobs.webp" alt="Jobs page: fit-scored job cards with Approve / Apply now / Remove"></td>
+<td width="50%"><img src="docs/screenshots/applications.webp" alt="Applications tracker with status tiles and editable table"></td>
+</tr><tr><td align="center"><sub>Jobs, sorted by fit</sub></td><td align="center"><sub>Applications tracker</sub></td></tr></table>
+<p align="center"><sub>Screenshots use the bundled example profile and demo jobs; no real data.</sub></p>
+
 **What it does**
 - **Discovers jobs** from the Greenhouse, Lever and Ashby board APIs, plus LinkedIn and Naukri collectors driven by Playwright, then dedupes them with TF-IDF.
 - **Scores fit** with an LLM (Claude, DeepSeek or any OpenAI-compatible API) against a weighted rubric. With no key it falls back to a deterministic heuristic mode.
