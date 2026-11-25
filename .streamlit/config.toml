@@ -1,0 +1,23 @@
+[server]
+headless = true
+maxUploadSize = 10
+runOnSave = false
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = "type"
+
+[theme]
+base = "light"
+primaryColor = "#4F46E5"
+backgroundColor = "#F8FAFC"
+secondaryBackgroundColor = "#EEF2FF"
+textColor = "#0F172A"
+borderColor = "#E2E8F0"
+showWidgetBorder = true
+baseRadius = "0.6rem"
+font = "sans-serif"
+headingFontWeights = [700, 650, 600, 600, 600, 600]

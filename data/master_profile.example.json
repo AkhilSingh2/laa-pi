@@ -1,0 +1,365 @@
+{
+  "basics": {
+    "full_name": "Alex Morgan",
+    "first_name": "Alex",
+    "last_name": "Morgan",
+    "headline": "Senior Full-Stack Engineer | React, Next.js, Python, FastAPI, AWS & AI Systems",
+    "email": "alex.morgan@example.com",
+    "phone": "+91 90000 00000",
+    "location": {
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "country": "India",
+      "postal_code": "560001"
+    },
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/example",
+      "github": "https://github.com/example",
+      "portfolio": ""
+    },
+    "summaries": {
+      "default": "Example profile. Senior Full-Stack Engineer with 5+ years of experience building scalable web applications, internal platforms, and AI-integrated workflows across React/Next.js, Python/FastAPI, PostgreSQL, and AWS.",
+      "variants": {
+        "fullstack": "Example profile. Senior Full-Stack Engineer with 5+ years of experience owning end-to-end product architecture across React, Next.js, TypeScript, Python, and FastAPI on AWS and Kubernetes.",
+        "ai_platform": "Example profile. Senior Full-Stack & AI Platform Engineer with 5+ years of experience building LLM-powered workflows and asynchronous Python/FastAPI pipelines (Celery/SQS) on AWS and Kubernetes.",
+        "frontend": "Example profile. Senior Frontend & Full-Stack Engineer with 5+ years of experience in React, Next.js, Vue.js, TypeScript, and Design Systems."
+      }
+    }
+  },
+  "application_defaults": {
+    "total_experience_years": 5.5,
+    "relevant_experience_years": 5.5,
+    "current_company": "Acme Studios",
+    "current_title": "Senior Full-Stack Engineer",
+    "current_ctc_lpa": 0.0,
+    "expected_ctc_lpa": 0.0,
+    "currency": "INR",
+    "notice_period_days": 30,
+    "is_serving_notice": false,
+    "last_working_day": null,
+    "work_authorization": {
+      "india": "Authorized to work for any employer",
+      "requires_sponsorship": false
+    },
+    "work_mode_preferences": [
+      "Remote",
+      "Hybrid",
+      "Onsite"
+    ],
+    "preferred_locations": [
+      "Bangalore",
+      "Bengaluru",
+      "Remote",
+      "Gurugram",
+      "Hyderabad",
+      "Pune"
+    ],
+    "willing_to_relocate": true,
+    "gender": "Male",
+    "veteran_status": "Not applicable",
+    "disability_status": "No"
+  },
+  "skills_taxonomy": {
+    "aliases": {
+      "JS": "JavaScript (ES6+)",
+      "JavaScript": "JavaScript (ES6+)",
+      "TS": "TypeScript",
+      "NextJS": "Next.js",
+      "Vue": "Vue.js",
+      "Postgres": "PostgreSQL",
+      "K8s": "Kubernetes (Helm)",
+      "Kubernetes": "Kubernetes (Helm)",
+      "Helm": "Kubernetes (Helm)",
+      "KEDA": "KEDA (Autoscaling)",
+      "AWS": "AWS (S3, ECR, RDS, IAM, SQS)",
+      "AWS SQS": "SQS",
+      "FFmpeg": "FFmpeg Media Composition",
+      "RAG": "RAG Architectures",
+      "LLM": "Gemini LLM Integration",
+      "Sentry": "Sentry (Observability)",
+      "GitHub Actions": "CI/CD (Bitbucket, GitHub Actions)"
+    },
+    "frontend_ui": [
+      "React",
+      "Next.js",
+      "Vue.js",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "Tailwind CSS",
+      "Storybook",
+      "Electron.js",
+      "Figma Prototyping",
+      "Design System"
+    ],
+    "backend_apis": [
+      "Python",
+      "FastAPI",
+      "Node.js",
+      "PostgreSQL",
+      "MongoDB",
+      "RESTful APIs",
+      "Celery",
+      "SQS",
+      "Strapi CMS",
+      "NetSuite/CRM integrations"
+    ],
+    "devops_cloud": [
+      "AWS (S3, ECR, RDS, IAM, SQS)",
+      "Kubernetes (Helm)",
+      "KEDA (Autoscaling)",
+      "Terraform",
+      "Docker",
+      "CI/CD (Bitbucket, GitHub Actions)"
+    ],
+    "ai_media": [
+      "Gemini LLM Integration",
+      "Prompt Engineering",
+      "RAG Architectures",
+      "FFmpeg Media Composition"
+    ],
+    "architecture_quality": [
+      "Monorepo Architecture",
+      "Microservices",
+      "Sentry (Observability)",
+      "Biome",
+      "SonarQube",
+      "Jira SDLC"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Acme Studios",
+      "title": "Senior Full-Stack Engineer",
+      "location": "Bangalore, India",
+      "start_date": "2024-01",
+      "end_date": "Present",
+      "domain_tags": [
+        "fullstack",
+        "ai-platforms",
+        "backend",
+        "devops",
+        "frontend",
+        "fintech"
+      ],
+      "bullets": [
+        {
+          "text": "Built an internal asset-management platform with a React/TypeScript frontend and a FastAPI/Python backend using asynchronous Celery/SQS workflows.",
+          "keywords": [
+            "React",
+            "TypeScript",
+            "FastAPI",
+            "Python",
+            "Celery",
+            "SQS",
+            "AI",
+            "Full-Stack"
+          ],
+          "impact_metric": "End-to-end platform architecture with async job orchestration"
+        },
+        {
+          "text": "Built a localisation dashboard and integrated Gemini LLMs to score translation quality automatically, with alerting on regressions.",
+          "keywords": [
+            "Gemini LLM",
+            "Python",
+            "React",
+            "TypeScript",
+            "LLM Integration",
+            "Pipelines"
+          ],
+          "impact_metric": "Automated LLM quality evaluation for localised content"
+        },
+        {
+          "text": "Engineered an FFmpeg-based media pipeline for video, GIF, and audio rendering, fixing edge cases in sample rates and browser streaming.",
+          "keywords": [
+            "FFmpeg",
+            "Python",
+            "Video Processing",
+            "Media Composition",
+            "Streaming"
+          ],
+          "impact_metric": "Multi-format media rendering pipeline"
+        },
+        {
+          "text": "Added content signatures for deduplication and idempotent retries to prevent duplicate records during transient AWS/database failures.",
+          "keywords": [
+            "AWS",
+            "Idempotency",
+            "Deduplication",
+            "Cost Optimization",
+            "Distributed Systems",
+            "PostgreSQL"
+          ],
+          "impact_metric": "Eliminated duplicate records on retries"
+        },
+        {
+          "text": "Migrated a marketing website to Next.js and Strapi CMS, parallelising data fetches and fixing hydration mismatches to reduce page load times by 45%.",
+          "keywords": [
+            "Next.js",
+            "Strapi CMS",
+            "React",
+            "Performance Optimization",
+            "SSR",
+            "TypeScript"
+          ],
+          "impact_metric": "45% reduction in page load times"
+        },
+        {
+          "text": "Built reusable UI packages for a design system in Figma and React/Storybook, cutting frontend cycle times by 40%.",
+          "keywords": [
+            "Design System",
+            "React",
+            "Storybook",
+            "Figma",
+            "TypeScript",
+            "Component Architecture"
+          ],
+          "impact_metric": "40% reduction in frontend cycle times"
+        },
+        {
+          "text": "Set up a finance monorepo across React and FastAPI with REST integrations to an accounting system (NetSuite).",
+          "keywords": [
+            "Monorepo",
+            "React",
+            "FastAPI",
+            "NetSuite",
+            "RESTful APIs",
+            "PostgreSQL",
+            "FinTech"
+          ],
+          "impact_metric": "Zero-to-one finance monorepo"
+        },
+        {
+          "text": "Provisioned Terraform infrastructure (ECR, RDS, S3, IAM) and Helm charts with KEDA queue-based autoscaling for background workers.",
+          "keywords": [
+            "Terraform",
+            "AWS",
+            "ECR",
+            "RDS",
+            "S3",
+            "IAM",
+            "Kubernetes",
+            "Helm",
+            "KEDA",
+            "Docker"
+          ],
+          "impact_metric": "Queue-based autoscaling for workers"
+        }
+      ]
+    },
+    {
+      "company": "Northwind Digital",
+      "title": "Frontend Developer",
+      "location": "Remote",
+      "start_date": "2023-06",
+      "end_date": "2023-12",
+      "domain_tags": [
+        "frontend",
+        "react",
+        "seo",
+        "web"
+      ],
+      "bullets": [
+        {
+          "text": "Built SEO-optimised landing pages in React, increasing organic traffic by 40%.",
+          "keywords": [
+            "React",
+            "SEO",
+            "JavaScript",
+            "Frontend",
+            "Web Performance"
+          ],
+          "impact_metric": "40% organic traffic increase"
+        },
+        {
+          "text": "Fixed client-facing UI/UX defects and shipped fast stakeholder feedback loops.",
+          "keywords": [
+            "UI/UX",
+            "React",
+            "JavaScript",
+            "Frontend"
+          ],
+          "impact_metric": "Improved application stability"
+        }
+      ]
+    },
+    {
+      "company": "Contoso Labs",
+      "title": "Associate Software Engineer",
+      "location": "Gurugram, India",
+      "start_date": "2020-07",
+      "end_date": "2023-05",
+      "domain_tags": [
+        "fullstack",
+        "frontend",
+        "vue",
+        "desktop",
+        "mongodb",
+        "aws"
+      ],
+      "bullets": [
+        {
+          "text": "Built a custom CMS and a macOS desktop app with Electron.js and Vue.js, halving content publishing time.",
+          "keywords": [
+            "Electron.js",
+            "Vue.js",
+            "CMS",
+            "JavaScript",
+            "Desktop App"
+          ],
+          "impact_metric": "50% faster publishing turnaround"
+        },
+        {
+          "text": "Designed MongoDB schemas and provisioned AWS infrastructure for faster data retrieval.",
+          "keywords": [
+            "MongoDB",
+            "AWS",
+            "Database Optimization",
+            "Backend"
+          ],
+          "impact_metric": "Faster data retrieval"
+        },
+        {
+          "text": "Led Vue.js frontend delivery tracks with consistent on-time milestones.",
+          "keywords": [
+            "Vue.js",
+            "Frontend",
+            "Technical Leadership",
+            "Agile",
+            "Jira"
+          ],
+          "impact_metric": "On-time milestone delivery"
+        }
+      ]
+    }
+  ],
+  "projects": [],
+  "education": [
+    {
+      "institution": "Example Institute of Technology",
+      "location": "Bangalore, India",
+      "degree": "Bachelor of Technology - Computer Science Engineering",
+      "start_date": "2016-08",
+      "end_date": "2020-06",
+      "gpa": ""
+    }
+  ],
+  "certifications": [],
+  "screening_qa_bank": [
+    {
+      "question_pattern": "why do you want to join|why this company|why are you interested",
+      "answer_guideline": "Connect 5+ years of end-to-end ownership across React/Next.js, Python/FastAPI and AWS with the product and engineering challenges in the JD. Keep under 3 concise sentences."
+    },
+    {
+      "question_pattern": "notice period|how soon can you join|earliest start date",
+      "answer_guideline": "State the notice_period_days from application_defaults and mention willingness to discuss early release if applicable."
+    },
+    {
+      "question_pattern": "current ctc|expected ctc|salary expectation|compensation",
+      "answer_guideline": "Use current_ctc_lpa and expected_ctc_lpa from application_defaults in INR LPA, noting openness to competitive market compensation."
+    },
+    {
+      "question_pattern": "ai experience|llm|generative ai|machine learning",
+      "answer_guideline": "Highlight LLM integration work from the experience section (e.g. automated translation quality scoring)."
+    }
+  ]
+}

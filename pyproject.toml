@@ -1,0 +1,51 @@
+[project]
+name = "laa-pi"
+version = "0.1.0"
+description = "Local-first, policy-compliant AI Job Search, Resume Tailoring & Application Copilot (Streamlit + SQLite)"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "streamlit>=1.39",
+    "sqlalchemy>=2.0",
+    "pydantic[email]>=2.8",
+    "pydantic-settings>=2.4",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0",
+    "anthropic>=0.40",
+    "httpx>=0.27",
+    "scikit-learn>=1.5",
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "jinja2>=3.1",
+    "weasyprint>=62",
+    "playwright>=1.47",
+    "apscheduler>=3.10,<4",
+    "loguru>=0.7",
+    "rapidfuzz>=3.9",
+    "tenacity>=9.0",
+    "pypdf>=5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-mock>=3.14",
+    "respx>=0.21",
+    "ruff>=0.6",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.uv]
+package = false

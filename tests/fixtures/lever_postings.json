@@ -1,0 +1,17 @@
+[
+  {
+    "id": "a1b2c3d4-0000-4000-8000-000000000001",
+    "text": "Senior Full-Stack Engineer",
+    "createdAt": 1762675200000,
+    "hostedUrl": "https://jobs.lever.co/acme/a1b2c3d4-0000-4000-8000-000000000001",
+    "applyUrl": "https://jobs.lever.co/acme/a1b2c3d4-0000-4000-8000-000000000001/apply",
+    "workplaceType": "hybrid",
+    "categories": {"commitment": "Full-time", "department": "Engineering", "location": "Bengaluru", "team": "Platform", "allLocations": ["Bengaluru"]},
+    "descriptionPlain": "We are hiring a Senior Full Stack Engineer with 5+ years of experience in React, TypeScript, Python and FastAPI. You will own services on AWS and Kubernetes, work with PostgreSQL, and build LLM-powered features.",
+    "description": "<p>We are hiring...</p>",
+    "lists": [
+      {"text": "Requirements", "content": "<li>React / Next.js</li><li>Python / FastAPI</li><li>AWS, Terraform, Docker</li>"}
+    ],
+    "additionalPlain": "Equal opportunity employer."
+  }
+]

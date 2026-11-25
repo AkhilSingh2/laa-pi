@@ -1,0 +1,11 @@
+company,ats_type,board_token,careers_url,priority,notes
+Stripe,greenhouse,stripe,https://stripe.com/jobs,1,Payments infra; strong Python/React usage
+Figma,greenhouse,figma,https://www.figma.com/careers/,1,Design tooling; React/TypeScript heavy
+Airbnb,greenhouse,airbnb,https://careers.airbnb.com/,2,Large web platform
+Databricks,greenhouse,databricks,https://www.databricks.com/company/careers,2,Data + AI platform
+Razorpay,lever,razorpay,https://razorpay.com/jobs/,1,Bangalore fintech
+Postman,lever,postman,https://www.postman.com/company/careers/,1,Bangalore API tooling
+Spotify,lever,spotify,https://www.lifeatspotify.com/jobs,2,Web platform & media
+Notion,ashby,notion,https://www.notion.so/careers,1,Productivity; Next.js/TypeScript
+Linear,ashby,linear,https://linear.app/careers,2,Remote-first product eng
+Ramp,ashby,ramp,https://ramp.com/careers,2,Fintech; Python/React

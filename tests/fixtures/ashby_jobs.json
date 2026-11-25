@@ -1,0 +1,29 @@
+{
+  "apiVersion": "1",
+  "jobs": [
+    {
+      "id": "7f1e2d3c-1111-4000-8000-000000000002",
+      "title": "Senior Frontend Engineer (Next.js)",
+      "department": "Engineering",
+      "team": "Web Platform",
+      "employmentType": "FullTime",
+      "location": "Remote - India",
+      "secondaryLocations": [{"location": "Bangalore"}],
+      "publishedAt": "2026-11-11T10:00:00.000Z",
+      "isListed": true,
+      "isRemote": true,
+      "descriptionHtml": "<p>Build our design system and Next.js web app. 4+ years React, TypeScript, Storybook. Tailwind CSS a plus.</p>",
+      "descriptionPlain": "Build our design system and Next.js web app. 4+ years React, TypeScript, Storybook. Tailwind CSS a plus.",
+      "jobUrl": "https://jobs.ashbyhq.com/acme/7f1e2d3c-1111-4000-8000-000000000002",
+      "applyUrl": "https://jobs.ashbyhq.com/acme/7f1e2d3c-1111-4000-8000-000000000002/application",
+      "compensation": null
+    },
+    {
+      "id": "unlisted-1",
+      "title": "Hidden role",
+      "isListed": false,
+      "descriptionPlain": "n/a",
+      "jobUrl": "https://jobs.ashbyhq.com/acme/unlisted-1"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+# secrets
+.env
+
+# runtime data (local-first; never commit)
+data/jobs.db
+data/jobs.db-*
+data/browser_profile/
+data/resumes/
+data/screenshots/
+data/exports/
+data/secrets.json
+data/settings_overrides.yaml
+data/master_profile.backup-*.json
+# your real profile (name, phone, CTC, ...) stays local; the example is committed
+data/master_profile.json
+data/master_profile.backup-*.json
+!data/master_profile.example.json
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# os / editor
+.DS_Store
+.idea/
+.vscode/

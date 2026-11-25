@@ -1,0 +1,28 @@
+{
+	admin off
+	auto_https off
+	persist_config off
+}
+
+:{$PORT:8080} {
+	encode gzip
+
+	# Unauthenticated health probe for the host (Railway, Docker HEALTHCHECK).
+	handle /healthz {
+		respond "ok" 200
+	}
+
+	route {
+		basic_auth {
+			{$APP_USER:laa} {$APP_PASSWORD_HASH}
+		}
+
+		handle_path /browser/* {
+			reverse_proxy 127.0.0.1:6080
+		}
+
+		handle {
+			reverse_proxy 127.0.0.1:8501
+		}
+	}
+}

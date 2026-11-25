@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ r.header.full_name }} - Resume</title>
+<style>{{ css | safe }}</style>
+</head>
+<body>
+<header class="hdr">
+  <h1>{{ r.header.full_name }}</h1>
+  <p class="headline">{{ r.header.headline }}</p>
+  <p class="contact">
+    {{ r.header.location }}{% if r.header.phone %} | {{ r.header.phone }}{% endif %}{% if r.header.email %} | {{ r.header.email }}{% endif %}
+    {%- for link in r.header.links %} | {{ link }}{% endfor %}
+  </p>
+</header>
+
+{% if "summary" in sections and r.summary %}
+<section>
+  <h2>Summary</h2>
+  <p>{{ r.summary }}</p>
+</section>
+{% endif %}
+
+{% if "skills" in sections and r.skills %}
+<section>
+  <h2>Skills</h2>
+  {% for group in r.skills %}
+  <p class="skills"><strong>{{ group.label }}:</strong> {{ group.skills | join(", ") }}</p>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if "experience" in sections %}
+<section>
+  <h2>Experience</h2>
+  {% for role in r.experience %}
+  <div class="role">
+    <div class="role-head">
+      <span><span class="role-title">{{ role.title }}</span>, <span class="role-company">{{ role.company }}</span></span>
+      <span class="role-dates">{{ role.start_date }} – {{ role.end_date }}</span>
+    </div>
+    {% if role.location %}<div class="role-loc">{{ role.location }}</div>{% endif %}
+    <ul>
+      {% for b in role.bullets %}<li>{{ b }}</li>{% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if "projects" in sections and r.projects %}
+<section>
+  <h2>Projects</h2>
+  {% for p in r.projects %}
+  <p><strong>{{ p.name }}</strong>{% if p.description %} – {{ p.description }}{% endif %}</p>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if "education" in sections and r.education %}
+<section>
+  <h2>Education</h2>
+  {% for e in r.education %}
+  <div class="role-head">
+    <span><span class="role-title">{{ e.degree }}</span>, <span class="role-company">{{ e.institution }}</span></span>
+    <span class="role-dates">{{ e.start_date }} – {{ e.end_date }}</span>
+  </div>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if "certifications" in sections and r.certifications %}
+<section>
+  <h2>Certifications</h2>
+  <p>{{ r.certifications | join(", ") }}</p>
+</section>
+{% endif %}
+</body>
+</html>

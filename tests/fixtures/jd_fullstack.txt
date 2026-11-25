@@ -1,0 +1,20 @@
+Senior Full Stack Engineer - Bangalore (Hybrid)
+
+About the role
+We're looking for a Senior Full Stack Engineer with 5+ years of experience to own features end-to-end across our React/Next.js frontend and Python/FastAPI backend. You'll design PostgreSQL data models, deploy services to AWS with Terraform and Kubernetes, and integrate LLM-powered workflows into our internal platforms.
+
+What you'll do
+- Build and ship product features in React, TypeScript and Next.js
+- Design and operate FastAPI microservices with Celery/SQS background workers
+- Own CI/CD pipelines with GitHub Actions and Docker
+- Partner with design on our component library in Storybook
+- Instrument services with Sentry and improve observability
+
+What we're looking for
+- 5+ years of professional software engineering experience
+- Strong React and TypeScript skills; Next.js in production
+- Python backend experience (FastAPI or Django) and PostgreSQL
+- Hands-on AWS (S3, RDS, IAM) and Kubernetes experience
+- Bonus: experience with RAG architectures, prompt engineering, or FFmpeg media pipelines
+
+Hiring manager: Priya Nair, Engineering Manager. Recruiter contact: rahul.mehta@acme.com

@@ -1,0 +1,168 @@
+# laa-pi configuration. Paths are relative to the repository root.
+# Every field referencing the profile maps to a key in data/master_profile.json.
+
+app:
+  timezone: Asia/Kolkata
+  db_path: data/jobs.db
+  profile_path: data/master_profile.json
+  resumes_dir: data/resumes
+  screenshots_dir: data/screenshots
+  browser_profile_dir: data/browser_profile
+  exports_dir: data/exports
+  log_level: INFO
+
+llm:
+  provider: anthropic                      # anthropic | deepseek | routerplus | openai (any /chat/completions API)
+  model: claude-sonnet-4-6
+  api_key_env: ANTHROPIC_API_KEY        # or DEEPSEEK_API_KEY, TM_API_KEY, LLM_API_KEY; Settings > AI writes this
+  temperature: 0.2
+  max_tokens: 4096
+  max_retries: 3
+
+search:                                  # shared by all collectors
+  titles:
+    - Senior Full-Stack Engineer
+    - Senior Software Engineer
+    - Full Stack Developer
+    - Senior Frontend Engineer
+    - AI Platform Engineer
+  experience_years: { min: 4, max: 8 }   # around application_defaults.total_experience_years = 5.5
+  locations: [Bangalore, Bengaluru, Remote, Gurugram, Hyderabad, Pune]   # = application_defaults.preferred_locations
+  remote_types: [remote, hybrid, onsite] # = application_defaults.work_mode_preferences
+  posted_within_days: 7
+  exclude_title_keywords: [Intern, Internship, Manager, Director, ".NET", Java Developer, PHP, Android, iOS]
+  exclude_companies: [Acme Studios]          # = application_defaults.current_company
+
+sources:
+  greenhouse: { enabled: true, companies_csv: config/target_companies.csv }
+  lever:      { enabled: true, companies_csv: config/target_companies.csv }
+  ashby:      { enabled: true, companies_csv: config/target_companies.csv }
+  linkedin:
+    enabled: true
+    queries:
+      - "Full Stack Engineer"
+      - "Senior Software Engineer"
+      - "Frontend Engineer"
+      - "Full Stack Developer"
+    experience_levels: ["Associate", "Mid-Senior level"]  # f_E=3,4; dropped if a query returns nothing
+    location: "India"
+    remote_filters: [remote, hybrid, onsite]
+    max_pages_per_query: 3
+    easy_apply_only: false
+  naukri:
+    enabled: true
+    queries:
+      - "Senior Full Stack Developer React Python"
+      - "Full Stack Engineer Next.js FastAPI"
+    experience_years: 5
+    locations: [Bangalore, Remote, Hyderabad, Pune, Gurugram]
+    max_pages_per_query: 3
+
+matching:
+  dedup:
+    tfidf_cosine_threshold: 0.88
+    url_priority: [direct_ats, linkedin, naukri]   # direct_ats = greenhouse|lever|ashby
+  fit_threshold: 75                                # archive below
+  rubric:                                          # weights sum to 100
+    core_skills_overlap: 35      # against skills_taxonomy (+ aliases)
+    seniority_match: 20          # vs total_experience_years / current_title
+    domain_relevance: 15         # vs experience[].domain_tags
+    location_work_mode: 15       # vs preferred_locations / work_mode_preferences
+    tech_stack_depth: 10         # bullets.keywords evidence
+    role_scope_clarity: 5
+  summary_variant_rules:         # JD signal -> summaries.variants key
+    ai_platform: [LLM, GenAI, RAG, "AI platform", "machine learning", pipelines]
+    frontend:    [React, Next.js, Vue, frontend, "design system", UI]
+    fullstack:   [full stack, fullstack, FastAPI, Python, backend, AWS]
+    fallback: default
+
+quotas:
+  daily_caps: { linkedin: 20, naukri: 25, direct_ats: 30 }
+  human_delay_seconds: { min: 15, max: 45 }
+  execution_windows:                      # local time; actions outside are deferred
+    - { days: [mon, tue, wed, thu, fri], start: "09:30", end: "12:30" }
+    - { days: [mon, tue, wed, thu, fri], start: "15:00", end: "19:00" }
+  stop_scheduler_when_caps_reached: true
+
+copilot:
+  headless: false                         # required for persistent manual login
+  slow_mo_ms: 120
+  default_mode_by_platform:
+    linkedin: review_mode
+    naukri: review_mode
+    direct_ats: auto_submit_ats
+  auto_submit:
+    allowed_ats: [greenhouse, lever, ashby]
+    min_field_confidence: 0.75            # AI-written answers score 0.8; unresolved fields still block
+    require_all_required_fields: true
+  pause_on: [otp, captcha, login_required, unknown_question, upload_failed]
+  screenshot_on_pause: true
+  resume_upload_field_hints: [resume, cv, "upload your resume"]
+  profile_field_map:                      # form label regex -> master_profile.json path
+    "first name":                basics.first_name
+    "last name|surname":         basics.last_name
+    "full name|legal name|^name\\b": basics.full_name
+    "^e-?mail":                  basics.email
+    "phone|mobile":              basics.phone
+    "linkedin":                  basics.links.linkedin
+    "github":                    basics.links.github
+    "portfolio|website":         basics.links.portfolio
+    "current company|employer":  application_defaults.current_company
+    "current title|designation": application_defaults.current_title
+    "total experience|years of experience": application_defaults.total_experience_years
+    "notice period":             application_defaults.notice_period_days
+    "current ctc|current salary": application_defaults.current_ctc_lpa
+    "expected ctc|expected salary": application_defaults.expected_ctc_lpa
+    "sponsorship":               application_defaults.work_authorization.requires_sponsorship
+    "authori[sz]ed to work":     application_defaults.work_authorization.india
+    "relocat":                   application_defaults.willing_to_relocate
+    "gender":                    application_defaults.gender
+    "veteran":                   application_defaults.veteran_status
+    "disabilit":                 application_defaults.disability_status
+    "city|location":             basics.location.city
+    "country":                   basics.location.country
+    "postal|zip|pin ?code":      basics.location.postal_code
+
+resume:
+  template: engine/templates/resume.html
+  stylesheet: engine/templates/resume.css
+  page: { size: A4, margin_mm: 14 }
+  filename_pattern: "{company}_{role}_{date}.pdf"
+  bullets_per_role: { most_recent: 4, previous: 3, older: 2 }
+  max_skills_listed: 18
+  sections: [header, summary, skills, experience, education]    # projects/certifications omitted while empty
+  ats_keyword_score_warn_below: 70
+  zero_hallucination:
+    allow_only_profile_strings: true      # every skill/company/title/bullet must exist in profile
+    allow_alias_expansion: true           # skills_taxonomy.aliases only
+
+contacts:
+  max_recruiters: 1
+  max_peers: 1
+  use_linkedin_people_search: true        # via persistent browser, rate-limited
+  recruiter_title_keywords: [Recruiter, "Talent Acquisition", "Talent Partner", "People Partner"]
+  peer_title_keywords: ["Full Stack", Frontend, "Software Engineer", "Tech Lead", "Engineering Manager"]
+  email_pattern_candidates: ["{first}.{last}", "{first}", "{f}{last}", "{first}{l}", "{first}_{last}"]
+  xray_templates:
+    recruiter: 'site:linkedin.com/in "{company}" ("Recruiter" OR "Talent Acquisition")'
+    peer:      'site:linkedin.com/in "{company}" ("Full Stack" OR "Software Engineer") "{city}"'
+
+outreach:
+  auto_send: false                        # hard guardrail; UI copy/send only
+  recruiter_connect_max_chars: 300
+  recruiter_email_max_words: 120
+  peer_referral_max_words: 100
+  require_metric_from_profile: true       # must quote an experience[].bullets[].impact_metric
+  tone: "concise, specific, warm, no buzzwords"
+
+scheduler:
+  enabled: true
+  discovery_cron: "0 9 * * mon-fri"       # ingest + score + tailor
+  apply_cron:     "30 10,15 * * mon-fri"  # copilot batches within execution windows
+  misfire_grace_seconds: 600
+  max_concurrent_browser_tasks: 1
+
+tracker:
+  statuses: [Discovered, "Ready for Review", Applied, "Outreach Sent", Interview, Rejected, Ghosted]
+  ghosted_after_days: 14
+  csv_export_path: data/exports/applications.csv
